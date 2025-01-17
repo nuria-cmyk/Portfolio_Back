@@ -6,6 +6,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Route configuration
 // Ex.
 app.use('/api', require('./routes/api.routes'));
